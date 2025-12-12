@@ -1,0 +1,73 @@
+/* --- RESET & VARIABLES --- */
+:root {
+    --primary: #2c3e50; /* Dark Blue */
+    --accent: #27ae60;  /* Green */
+    --danger: #e74c3c;  /* Red */
+    --light: #f4f6f8;
+    --white: #ffffff;
+}
+
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: var(--light); color: var(--primary); padding-bottom: 50px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* --- NAVBAR --- */
+nav { background: var(--primary); padding: 15px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.nav-content { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+.brand { color: var(--white); font-size: 1.5rem; font-weight: bold; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.2s; font-size: 0.95rem; }
+.nav-links a:hover { color: var(--white); }
+
+/* --- SEARCH SECTION --- */
+.search-wrapper { background: var(--white); padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 20px; }
+.search-form { display: flex; gap: 10px; }
+.search-form input { flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; }
+.search-form button { padding: 12px 25px; background: var(--primary); color: white; border: none; border-radius: 6px; cursor: pointer; }
+
+/* --- CATEGORY CHIPS (High Visibility) --- */
+.category-scroll { overflow-x: auto; white-space: nowrap; padding-bottom: 5px; margin-bottom: 25px; -webkit-overflow-scrolling: touch; }
+.category-scroll::-webkit-scrollbar { height: 6px; }
+.category-scroll::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+
+.cat-chip { 
+    display: inline-block; 
+    padding: 10px 25px; 
+    margin-right: 10px; 
+    background: var(--white); 
+    border: 2px solid #e0e0e0; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    color: #555; 
+    font-weight: 700; 
+    transition: all 0.2s ease;
+}
+.cat-chip:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+.cat-chip.active { background: var(--primary); color: var(--white); border-color: var(--primary); box-shadow: 0 4px 10px rgba(44, 62, 80, 0.3); }
+
+/* --- PRODUCT GRID --- */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px; }
+.card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.06); transition: transform 0.2s; border: 1px solid #eee; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.card img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #eee; }
+.card-body { padding: 20px; }
+.card-category { font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; display: block; }
+.card h3 { margin: 0 0 10px; font-size: 1.1rem; color: #333; }
+.price { color: var(--accent); font-weight: 800; font-size: 1.3rem; display: block; margin-bottom: 15px; }
+
+/* --- BUTTONS & FORMS --- */
+button.btn-add { width: 100%; padding: 12px; background: var(--accent); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: background 0.2s; }
+button.btn-add:hover { background: #219150; }
+
+.form-box { background: var(--white); padding: 40px; max-width: 400px; margin: 40px auto; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; }
+.form-box h2 { margin-bottom: 25px; color: var(--primary); }
+.form-box input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+.form-box button { width: 100%; padding: 12px; margin-top: 10px; background: var(--primary); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+
+/* --- TABLES --- */
+table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+th { background: #f8f9fa; color: #555; font-weight: 700; }
+.btn-danger { background: var(--danger); padding: 6px 12px; color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; }
+
+/* --- UTILITIES --- */
+.error-msg { background: #fee2e2; color: #dc2626; padding: 10px; border-radius: 6px; margin-bottom: 15px; font-size: 0.9rem; }
+.success-msg { background: #dcfce7; color: #166534; padding: 10px; border-radius: 6px; margin-bottom: 15px; font-size: 0.9rem; }
